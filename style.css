@@ -38,6 +38,11 @@ disposition css
 ------------------------------------------------
 */
 
+/*  ajout de root  remarque : noublie pas de modifier toute les couleur */
+
+/* ===== RESET ===== */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -47,13 +52,26 @@ disposition css
 body {
   font-family: 'times new roman', Arial, sans-serif;
   font-size: 16px;
-  color: #333;
-  background-color: #dde3ea;
+  color: var(--couleur-texte);
+  background-color: #f8f9fa;
   line-height: 1.6;
 }
 
+
+
+
+/* ===== VARIABLES / COULEURS ===== */
+:root {
+  --couleur-fond-sombre: #03045E;
+  --couleur-accent: #1eb1f5;
+  --couleur-texte: #333;
+}
+
+
+
+/* ===== LAYOUT CV ===== */
 a {
-  color: #0077b6;
+  color: var(--couleur-accent);
   text-decoration: none;
 }
 
@@ -82,13 +100,15 @@ ul a {
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
 }
 
+/* ===== SIDEBAR ===== */
+
 
 /*  SIDEBAR (colonne gauche)  */
 
 .sidebar {
   width: 280px;
   min-width: 280px;
-  background-color: #03045E;
+  background-color: var(--couleur-fond-sombre);
   color: white;
   padding: 30px 22px;
 }
@@ -101,9 +121,9 @@ ul a {
 .profile-photo img {
   width: 130px;
   height: 130px;
-  border-radius: 50%;
-  border: 4px solid #1eb1f5;
-  object-fit: cover;
+  border-radius: 50%; /* rend l'image circulaire */
+  border: 4px solid var(--couleur-accent);
+  object-fit: cover; /* recadre sans déformer */
   display: block;
   margin: 0 auto;
 }
@@ -160,7 +180,7 @@ ul a {
 }
 
 .btn-contact:hover {
-  background-color: #1eb1f5;
+  background-color: #1eb1f5; /* s'anime en douceur */
   text-decoration: none;
 }
 
@@ -205,7 +225,7 @@ ul a {
   font-size: 14px;
 }
 
-
+/* ===== CONTENU PRINCIPAL ===== */
 /* ===== CONTENU PRINCIPAL (colonne droite) ================= */
 
 .main-content {
@@ -235,6 +255,7 @@ ul a {
   border-bottom: 2.5px solid #03045E;
   display: inline-block;
 }
+
 
 .timeline-item {
   display: flex;
@@ -267,14 +288,14 @@ ul a {
 
 .timeline-content .etablissement {
   font-size: 0.84em;
-  color: #7f8c8d;
+  color: var(--couleur-sombre);
   font-style: italic;
   margin-bottom: 5px;
 }
 
 .timeline-content p {
   font-size: 0.88em;
-  color: #555;
+  color: #000000;
   line-height: 1.6;
 }
 
@@ -547,71 +568,13 @@ textarea {
 /* ===== RESPONSIVE — Tablette et Mobile =================== */
 
 @media (max-width: 768px) {
-
-  .cv-container {
-    flex-direction: column;
-    margin: 0;
-    border-radius: 0;
-  }
-
-  .sidebar {
-    width: 100%;
-    min-width: unset;
-  }
-
-  .main-content {
-    padding: 25px 20px;
-  }
-
-  .timeline-item {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .timeline-date {
-    text-align: left;
-    min-width: unset;
-  }
-
-  .timeline-content {
-    border-left: none;
-    padding-left: 0;
-    border-top: 2px solid #e8f4fc;
-    padding-top: 10px;
-  }
-
-  .contact-container {
-    flex-direction: column;
-  }
-
-  .contact-info {
-    border-left: none;
-    border-top: 1px solid #ecf0f1;
-  }
-
-  .formulaire-contact {
-    padding: 25px 20px;
-  }
-
-  .contact-header {
-    padding: 25px 20px;
-  }
-
-  .cv-footer {
-    border-radius: 0;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .btn-envoyer,
-  .btn-reset {
-    width: 100%;
-    text-align: center;
-  }
-
-  .champ-boutons {
-    flex-direction: column;
-  }
+/* Sidebar et contenu passent en colonne (l'un au-dessus de l'autre) */
+.cv-container { flex-direction: column; }
+.sidebar { width: 100%; }
+/* Timeline : date et contenu s'empilent */
+.timeline-item { flex-direction: column; }
+.timeline-date { text-align: left; }
+/* Page contact : formulaire et infos s'empilent */
+.contact-container { flex-direction: column; }
+.contact-info { border-left: none; border-top: 1px solid #ecf0f1; }
 }
