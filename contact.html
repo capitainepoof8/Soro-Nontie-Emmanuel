@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Soro Nontie Emmanuel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-contact">
+
+    
+    <header class="contact-header">
+      <a class="retour-cv" href="index.html">← Retour au CV</a>
+      <h1>Me contacter</h1>
+      <p>Une question, une opportunité ? Remplissez le formulaire ci-dessous.</p>
+    </header>
+
+    
+    <div class="contact-container">
+
+      
+      <form class="formulaire-contact" action="#" method="post">
+
+        <fieldset>
+          <legend>Vos informations</legend>
+
+          <div class="champ">
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom"
+              placeholder="Votre nom et prénom" required>
+          </div>
+
+          <div class="champ">
+            <label for="email">Adresse email *</label>
+            <input type="email" id="email" name="email"
+              placeholder="exemple@email.com" required>
+          </div>
+
+          <div class="champ">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel"
+              placeholder="+221 77 000 00 00">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Votre message</legend>
+
+          <div class="champ">
+            <label for="objet">Objet *</label>
+            <select id="objet" name="objet" required>
+              <option value="">— Choisir un objet —</option>
+              <option value="stage">Offre de stage</option>
+              <option value="emploi">Offre d'emploi</option>
+              <option value="projet">Proposition de projet</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="champ">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6"
+              minlength="10"
+              placeholder="Écrivez votre message ici..."
+              required></textarea>
+          </div>
+
+          <div class="champ champ-checkbox">
+            <input type="checkbox" id="1234" name="1234" required>
+            <label for="1234">
+              J'accepte que mes données soient utilisées pour me recontacter *
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="champ-boutons">
+          <button type="submit" class="btn-envoyer">Envoyer</button>
+          <button type="reset" class="btn-reset">Réinitialiser</button>
+        </div>
+
+      </form>
+
+      <aside class="contact-info">
+        <h2>Coordonnées directes</h2>
+
+        <div class="info-item">
+          <strong>Email</strong>
+          <a href="mailto:manuelsoro205@gmail.com">manuelsoro205@gmail.com</a>
+        </div>
+
+        <div class="info-item">
+          <strong>Téléphone</strong>
+          <p>+221 71 053 87 94</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Localisation</strong>
+          <p>Dakar, Sénégal</p>
+        </div>
+
+        <div class="info-item">
+          <strong>LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/emmanuel-soro-459468284/"
+            target="_blank" rel="noopener">
+            linkedin.com
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="cv-footer">
+    <p>2026 Soro Nontie Emmanuel —
+      <a href="index.html">Retour au CV</a>
+    </p>
+  </footer>
+
+</body>
+</html>
